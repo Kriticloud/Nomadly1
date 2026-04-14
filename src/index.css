@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0A192F;
+  --color-beige: #F5F2ED;
+  --color-gold: #D4AF37;
+  --color-glass: rgba(255, 255, 255, 0.12);
+  --color-glass-heavy: rgba(10, 25, 47, 0.65);
+  --color-glass-border: rgba(255, 255, 255, 0.25);
+  
+  --font-serif: "Georgia", serif;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-navy text-white font-sans overflow-x-hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, .font-serif {
+    @apply font-serif;
+  }
+}
+
+.bg-gradient-cinematic {
+  background: 
+    linear-gradient(rgba(10, 25, 47, 0.4), rgba(10, 25, 47, 0.4)),
+    radial-gradient(circle at 70% 30%, #1a365d 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, #3d2b1f 0%, transparent 50%),
+    #112240;
+}
+
+.frosted-glass {
+  @apply bg-glass border border-glass-border backdrop-blur-xl;
+}
+
+.frosted-glass-heavy {
+  @apply bg-glass-heavy border border-glass-border backdrop-blur-lg;
+}
+
+.glow-gold {
+  @apply absolute rounded-full bg-gold opacity-15 blur-[150px];
+  width: 400px;
+  height: 400px;
+}
