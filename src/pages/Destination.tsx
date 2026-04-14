@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 import ReviewSection from '../components/ReviewSection';
+import RecommendedTours from '../components/RecommendedTours';
 
 export default function Destination() {
   const { id } = useParams();
@@ -37,6 +38,7 @@ export default function Destination() {
               </p>
             </div>
 
+            <RecommendedTours destinationId={id || ''} />
             <ReviewSection targetId={id || ''} />
           </div>
           
