@@ -1,7 +1,10 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import { useNavigate } from 'react-router-dom';
 
 export default function Experience() {
+  const navigate = useNavigate();
+
   return (
     <Layout>
       <div className="px-16 pt-10 pb-32">
@@ -14,7 +17,10 @@ export default function Experience() {
             <p className="text-white/80 leading-relaxed">
               From street food tours in Bangkok to Michelin-starred dining in Paris, discover the world through its flavors.
             </p>
-            <button className="mt-4 border border-gold text-gold px-8 py-3 rounded-full uppercase text-xs tracking-widest hover:bg-gold hover:text-navy transition-all self-start">
+            <button 
+              onClick={() => navigate('/destinations')}
+              className="mt-4 border border-gold text-gold px-8 py-3 rounded-full uppercase text-xs tracking-widest hover:bg-gold hover:text-navy transition-all self-start"
+            >
               Explore Culinary
             </button>
           </div>
@@ -23,7 +29,10 @@ export default function Experience() {
             <p className="text-white/80 leading-relaxed">
               Trek through ancient rainforests, sail across crystal-clear fjords, and witness the majesty of the natural world.
             </p>
-            <button className="mt-4 border border-gold text-gold px-8 py-3 rounded-full uppercase text-xs tracking-widest hover:bg-gold hover:text-navy transition-all self-start">
+            <button 
+              onClick={() => navigate('/destinations')}
+              className="mt-4 border border-gold text-gold px-8 py-3 rounded-full uppercase text-xs tracking-widest hover:bg-gold hover:text-navy transition-all self-start"
+            >
               Explore Adventure
             </button>
           </div>
