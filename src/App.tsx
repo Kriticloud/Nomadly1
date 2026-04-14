@@ -12,6 +12,7 @@ import Destinations from './pages/Destinations';
 import Experience from './pages/Experience';
 import Journal from './pages/Journal';
 import Itinerary from './pages/Itinerary';
+import Profile from './pages/Profile';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/journal" element={<Journal />} />
           <Route path="/destinations/:id" element={<Destination />} />
           <Route path="/itineraries" element={<Itinerary />} />
+          <Route path="/profile" element={<Profile />} />
           {/* Add more routes here as needed */}
         </Routes>
       </Router>

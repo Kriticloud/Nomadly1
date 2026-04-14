@@ -45,6 +45,50 @@
         "updatedAt": { "type": "string", "format": "date-time" }
       },
       "required": ["userId", "days"]
+    },
+    "Review": {
+      "title": "Review",
+      "description": "User review for a destination or activity",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "userPhoto": { "type": "string" },
+        "targetId": { "type": "string", "description": "ID of the destination, hotel, or activity" },
+        "rating": { "type": "number", "minimum": 1, "maximum": 5 },
+        "comment": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "targetId", "rating", "comment"]
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "User booking record",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "targetId": { "type": "string" },
+        "targetName": { "type": "string" },
+        "type": { "type": "string", "enum": ["tour", "hotel", "activity"] },
+        "date": { "type": "string", "format": "date" },
+        "status": { "type": "string", "enum": ["confirmed", "pending", "cancelled"] },
+        "price": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "targetId", "type", "date"]
+    },
+    "SavedDestination": {
+      "title": "SavedDestination",
+      "description": "Destination saved by a user",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "destinationId": { "type": "string" },
+        "name": { "type": "string" },
+        "country": { "type": "string" },
+        "savedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "destinationId"]
     }
   },
   "firestore": {
@@ -55,6 +99,18 @@
     "/itineraries/{itineraryId}": {
       "schema": "Itinerary",
       "description": "User itineraries"
+    },
+    "/reviews/{reviewId}": {
+      "schema": "Review",
+      "description": "User reviews"
+    },
+    "/bookings/{bookingId}": {
+      "schema": "Booking",
+      "description": "User bookings"
+    },
+    "/saved_destinations/{savedId}": {
+      "schema": "SavedDestination",
+      "description": "User saved destinations"
     }
   }
 }

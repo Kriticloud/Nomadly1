@@ -11,7 +11,7 @@ export default function Navbar() {
       </Link>
       <nav className="flex items-center gap-12">
         <ul className="flex gap-8 list-none">
-          {['Destinations', 'Experience', 'Itineraries', 'Journal'].map((item) => (
+          {['Destinations', 'Experience', 'Itineraries', 'Journal', 'Profile'].map((item) => (
             <li key={item}>
               <Link
                 to={`/${item.toLowerCase()}`}

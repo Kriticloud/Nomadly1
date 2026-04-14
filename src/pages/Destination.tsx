@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
+import ReviewSection from '../components/ReviewSection';
 
 export default function Destination() {
   const { id } = useParams();
@@ -35,6 +36,8 @@ export default function Destination() {
                 Whether you're seeking adventure or relaxation, you'll find it here. Our curated experiences ensure you see the best of what this region has to offer.
               </p>
             </div>
+
+            <ReviewSection targetId={id || ''} />
           </div>
           
           <div className="flex flex-col gap-6">
